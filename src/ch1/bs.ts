@@ -1,7 +1,5 @@
-import { sort } from '../utils/utils';
-
 // BINARY SEARCH
-const binarySearch = (
+export const binarySearch = (
   arr: ReadonlyArray<number>,
   item: number,
   l = 0
@@ -16,9 +14,3 @@ const binarySearch = (
     ? binarySearch(arr.slice(0, mid), item, l)
     : binarySearch(arr.slice(mid + 1), item, mid + l + 1);
 };
-
-const arr: ReadonlyArray<number> = [1, 5, 3, 6, 7, 10, 56, 23, 45, 2];
-
-const i = binarySearch(sort(arr), 6);
-console.log(sort(arr));
-console.log(i);
