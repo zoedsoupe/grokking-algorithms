@@ -1,4 +1,4 @@
-import { count } from './count';
+import { count } from '../ch4/count';
 
 describe('test count function', () => {
   it('should return correct number of elements', () => {

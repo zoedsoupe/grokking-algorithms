@@ -1,4 +1,4 @@
-import { sqrt } from './sqrt';
+import { sqrt } from '../ch3/sqrt';
 
 describe("test newthon's square root", () => {
   it('should return correct square root', () => {

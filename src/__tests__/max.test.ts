@@ -1,4 +1,4 @@
-import { max } from './max';
+import { max } from '../ch4/max';
 
 describe('test max function', () => {
   it('should return the max number from array', () => {

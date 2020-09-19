@@ -1,4 +1,4 @@
-import { selectionSort } from './sls';
+import { selectionSort } from '../ch2/sls';
 
 describe('test selection sort algorithm', () => {
   it('should return sorted array', () => {

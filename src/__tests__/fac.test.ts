@@ -1,4 +1,4 @@
-import { factorial } from './fac';
+import { factorial } from '../ch3/fac';
 
 describe('test factorial function', () => {
   it('should return correct n!', () => {

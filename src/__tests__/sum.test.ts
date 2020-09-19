@@ -1,4 +1,4 @@
-import { sum } from './sum';
+import { sum } from '../ch4/sum';
 
 describe('test recursive sum function', () => {
   it('should sum correctly', () => {

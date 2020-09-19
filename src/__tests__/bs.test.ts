@@ -1,5 +1,5 @@
 import { sort } from '../utils/utils';
-import { binarySearch } from './bs';
+import { binarySearch } from '../ch1/bs';
 
 describe('Test Binary Search algorithm', () => {
   it('should return the correct index of given a number', () => {
