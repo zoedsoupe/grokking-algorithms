@@ -2,9 +2,9 @@ import { factorial } from './fac';
 
 describe('test factorial function', () => {
   it('should return correct n!', () => {
-    const n = 5;
-    const fac = 120;
+    const ns: readonly number[] = [5, 4, 3, 1, 0];
+    const results = [120, 24, 6, 1, 1];
 
-    expect(factorial(n)).toEqual(fac);
+    ns.forEach((n, i) => expect(factorial(n)).toEqual(results[i]));
   });
 });

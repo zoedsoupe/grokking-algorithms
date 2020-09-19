@@ -2,9 +2,13 @@ import { sum } from './sum';
 
 describe('test recursive sum function', () => {
   it('should sum correctly', () => {
-    const arr: ReadonlyArray<number> = [1, 2, 3, 4];
-    const expected = 10;
+    const arrs: readonly number[][] = [
+      [1, 2, 3, 4],
+      [5, 3, 1],
+      [9, 8, 58],
+    ];
+    const expected = [10, 9, 75];
 
-    expect(sum(arr)).toEqual(expected);
+    arrs.forEach((arr, i) => expect(sum(arr)).toEqual(expected[i]));
   });
 });
