@@ -37,6 +37,9 @@ Implementations of algorithms from book &#34;Grokking Algorithms - An Illustrate
 * [Sum](https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/sum.ts) - Sums all elements of an array with recursion, using divide and conquer.
 * [Quick Sort](https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/qsort.ts) - Is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value. Quicksort partitions an array and then calls itself recursively twice to sort the two resulting subarrays.
 
+### Chapter 5
+* [Hash Table](https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch5/hash.ts) - Creates an auto-resize Hash Table. A Hash Table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. It uses a hash function to compute an index, also called hash code.
+
 ### Utils
 
 * [Sort, Average, Head](https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/utils/utils.ts) - Basic algorithms to solve some problems as helper functions.
