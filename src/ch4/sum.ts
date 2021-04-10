@@ -1,14 +1,14 @@
 // SUM
 import { LazyT, List, ListT } from "../utils.ts";
 
-export function sumA(arr: ReadonlyArray<number>): number {
+export function sumA(arr: ReadonlyArray<number>): LazyT<number> {
   return doSumA(arr, () => 0);
 }
 
 function doSumA(arr: ReadonlyArray<number>, acc: LazyT<number>): LazyT<number> {
-  if (arr.length === 1) return acc();
+  if (arr.length === 1) return acc;
 
-  return sum(arr.slice(1), () => acc() + arr[0]);
+  return doSumA(arr.slice(1), () => acc() + arr[0]);
 }
 
 export function sumL(xs: ListT<number>): LazyT<number> {
@@ -20,5 +20,5 @@ function doSumL(xs: ListT<number>, acc: LazyT<number>): LazyT<number> {
 
   if (pair === null) return () => 0;
 
-  return sum(pair.tail, () => acc() + pair.head());
+  return doSumL(pair.tail, () => acc() + pair.head());
 }

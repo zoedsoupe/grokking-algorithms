@@ -1,6 +1,9 @@
-import { HashTable } from "../src/ch5/hash";
+import { HashTable } from "../src/ch5/hash.ts";
 import { assertGreaterThan } from "./assertions.ts";
-import { assertStrictEquals } from "https://deno.land/std@0.92.0/testing/asserts.ts";
+import {
+  AssertionError,
+  assertStrictEquals,
+} from "https://deno.land/std@0.92.0/testing/asserts.ts";
 
 Deno.test("test hash table", () => {
   Deno.test("should perform basic operations on a hash table", () => {
@@ -9,11 +12,12 @@ Deno.test("test hash table", () => {
     const hash2 = hash.set("myName", "Zoey");
     const hash3 = hash2.set("add", (a: number, b: number) => a + b);
 
-    expect(hash.get("myName")).toEqual("Zoey");
-
     assertStrictEquals(hash3.get("myName")(), "Zoey");
 
-    if (!(hash.get("add")() instanceof Function)) {
+    const actual = hash.get("add")();
+    const expected = Function;
+
+    if (!(actual instanceof expected)) {
       const msg =
         `actual: "${actual}" expected to be instance of : "${expected}"`;
       throw new AssertionError(msg);

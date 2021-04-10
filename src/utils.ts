@@ -99,18 +99,16 @@ export namespace List {
     };
   }
 
-  export function length<A>(xs: List<A>): LazyT<number> {
+  export function length<A>(xs: ListT<A>): LazyT<number> {
     return l(xs, () => 0);
   }
 
-  const l = <A>(xs: ListT<A>, acc: LazyT<A>): LazyT<A> => {
-    return () => {
-      const pair = xs();
+  const l = <A>(xs: ListT<A>, acc: LazyT<number>): LazyT<number> => {
+    const pair = xs();
 
-      if (pair === null) return acc();
+    if (pair === null) return acc;
 
-      return l(xs, () => acc() + 1);
-    };
+    return l(xs, () => acc() + 1);
   };
 
   export function filter<A>(f: (x: A) => boolean, xs: ListT<A>): ListT<A> {

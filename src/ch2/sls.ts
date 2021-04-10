@@ -24,11 +24,12 @@ export function selectionSort(
   sorted: ReadonlyArray<number> = [],
 ): ReadonlyArray<number> {
   // base case
-  arr.length <= 1 ? sorted : // recursive case:
-  // calls selection sort again
-  // always finding the smallest item
-    selectionSort(removeItem(arr, findSmallest(arr)), [
-      ...sorted,
-      findSmallest(arr),
-    ]);
+  return arr.length <= 1
+    ? sorted // recursive case:
+    : // calls selection sort again
+    // always finding the smallest item
+      selectionSort(removeItem(arr, findSmallest(arr)), [
+        ...sorted,
+        findSmallest(arr),
+      ]);
 }

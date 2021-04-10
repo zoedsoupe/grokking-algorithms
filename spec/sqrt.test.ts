@@ -7,5 +7,5 @@ Deno.test("test newthon's square root", () => {
 
   const sqrts = xs.map((x) => sqrt(() => x));
 
-  sqrts.forEach((n, i) => assertGreaterThanOrEqual(n, res[i]));
+  sqrts.forEach((n, i) => assertGreaterThanOrEqual(n(), res[i]));
 });
