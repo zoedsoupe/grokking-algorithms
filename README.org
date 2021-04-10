@@ -2,6 +2,9 @@
 #+author: Zoey de Souza Pessanha
 #+email: zoey.spessanha@zeetech.io
 
+#+caption: build
+[[https://github.com/zoedsoupe/grokking-algorithms/workflows/build/badge.svg?branch=main]]
+
 ** Description
    :PROPERTIES:
    :CUSTOM_ID: description
