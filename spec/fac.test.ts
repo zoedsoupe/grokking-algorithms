@@ -5,7 +5,7 @@ Deno.test("test factorial function", () => {
   const xs: readonly number[] = [5, 4, 3, 1, 0];
   const results = [120, 24, 6, 1, 1];
 
-  const ns = xs.map((x) => factorial(x));
+  const ns = xs.map((x) => factorial(() => x));
 
-  ns.forEach((n, i) => assertStrictEquals(n, result[i]));
+  ns.forEach((n, i) => assertStrictEquals(n(), result[i]));
 });
