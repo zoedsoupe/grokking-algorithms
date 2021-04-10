@@ -111,6 +111,4 @@ Illustrated Guide for progrgammers and other curious people"
    :CUSTOM_ID: license
    :END:
 Copyright © 2020 [[https://github.com/zoedsoupe][Zoey de Souza
-Pessanha <zoey.spessanha@zeetech.io>]]. This project is
-[[https://github.com/zoedsoupe/grokking-algorithms/blob/master/LICENSE][GPLv3]]
-licensed.
+Pessanha]]. This project is [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/LICENSE][GPLv3]] licensed.
