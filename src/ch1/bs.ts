@@ -2,8 +2,13 @@
 export const binarySearch = (
   arr: ReadonlyArray<number>,
   item: number,
-  l = 0
-): number => {
+): number => doBinarySearch(arr, item, 0);
+
+function doBinarySearch(
+  arr: ReadonlyArray<number>,
+  item: number,
+  l: number,
+): number {
   // base case, not found the item
   if (arr.length < 1) return -1;
 
@@ -16,6 +21,6 @@ export const binarySearch = (
   // recursive case, sends a
   // specific half of the list
   return arr[mid] > item
-    ? binarySearch(arr.slice(0, mid), item, l)
-    : binarySearch(arr.slice(mid + 1), item, mid + l + 1);
-};
+    ? doBinarySearch(arr.slice(0, mid), item, l)
+    : doBinarySearch(arr.slice(mid + 1), item, mid + l + 1);
+}
