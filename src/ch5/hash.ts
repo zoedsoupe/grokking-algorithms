@@ -1,6 +1,6 @@
 const hashStrintToInt = (s: string, tableSize: number): number =>
   s
-    .split('')
+    .split("")
     .reduce((acc, ch) => (acc = (13 * acc * ch.charCodeAt(0)) % tableSize), 17);
 
 export class HashTable {

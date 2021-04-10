@@ -1,5 +1,5 @@
 // QUICKSORT
-import { head } from '../utils/utils';
+import { head } from "../utils/utils";
 
 // calculates all number lesser than given a number
 const lesser = (arr: ReadonlyArray<number>, n: number) =>
@@ -11,15 +11,13 @@ const greater = (arr: ReadonlyArray<number>, n: number) =>
 
 export const quickSort = (
   arr: ReadonlyArray<number>,
-  p = head(arr)
+  p = head(arr),
 ): ReadonlyArray<number> =>
   // base case
   // dont need to call itself again
   // or don't even need to call recursion
-  arr.length < 2
-    ? arr
-    // calls it self twice
-    // with lesser and greater values given a pivot
-    // always divinding and conquering
-    // and return this array
-    : [...quickSort(lesser(arr, p)), p, ...quickSort(greater(arr, p))];
+  arr.length < 2 ? arr : // calls it self twice
+  // with lesser and greater values given a pivot
+  // always divinding and conquering
+  // and return this array
+    [...quickSort(lesser(arr, p)), p, ...quickSort(greater(arr, p))];

@@ -1,7 +1,7 @@
-import { quickSort } from '../ch4/qsort';
+import { quickSort } from "../ch4/qsort";
 
-describe('test quicksort function', () => {
-  it('should correctly order a array', () => {
+describe("test quicksort function", () => {
+  it("should correctly order a array", () => {
     const arrs: readonly number[][] = [
       [5, 4, 3, 2, 1],
       [2, 1],

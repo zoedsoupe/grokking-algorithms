@@ -1,9 +1,11 @@
 export type LazyT<A> = () => A;
 
-export type ListT<A> = LazyT<{
-  head: LazyT<A>;
-  tail: ListT<A>;
-} | null>;
+export type ListT<A> = LazyT<
+  {
+    head: LazyT<A>;
+    tail: ListT<A>;
+  } | null
+>;
 
 export namespace Lazy {
   export function sum(a: LazyT<number>, b: LazyT<number>): LazyT<number> {
@@ -56,7 +58,7 @@ export namespace List {
   export function foldr<A, B>(
     f: (a: A, b: B) => LazyT<B>,
     acc: LazyT<B>,
-    xs: ListT<A>
+    xs: ListT<A>,
   ): LazyT<B> {
     const pair = xs();
 

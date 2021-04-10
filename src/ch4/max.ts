@@ -1,12 +1,21 @@
 // MAX NUMBER ON ARRAY
-import { head } from '../utils/utils';
+import { LazyT, List } from "../utils.ts";
 
-export const max = (arr: ReadonlyArray<number>): number =>
+export function maxA(arr: ReadonlyArray<number>): LazyT<number> {
   // base case : dot not need to calculate
-  arr.length < 2
-    ? head(arr)
-    // base case to stop recursion
-    : max(arr.slice(1)) > head(arr)
-    // recursive case
-    ? max(arr.slice(1))
-    : head(arr);
+  return () =>
+    arr.length < 2
+      ? head(arr) // base case to stop recursion
+      : max(arr.slice(1)) > arr[0]
+      ? // recursive case
+        max(arr.slice(1))
+      : arr[0];
+}
+
+export function maxL(xs: ListT<number>): LazyT<number> {
+  const pair = xs();
+
+  if (pair === null) return () => NaN;
+
+  return max(pair.tail);
+}

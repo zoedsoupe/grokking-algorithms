@@ -1,7 +1,7 @@
-import { sum } from '../ch4/sum';
+import { sum } from "../ch4/sum";
 
-describe('test recursive sum function', () => {
-  it('should sum correctly', () => {
+describe("test recursive sum function", () => {
+  it("should sum correctly", () => {
     const arrs: readonly number[][] = [
       [1, 2, 3, 4],
       [5, 3, 1],
