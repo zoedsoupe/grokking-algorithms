@@ -1,0 +1,116 @@
+#+title: Welcome to grokking-algorithms 👋
+#+author: Zoey de Souza Pessanha
+#+email: zoey.spessanha@zeetech.io
+
+** Description
+   :PROPERTIES:
+   :CUSTOM_ID: description
+   :END:
+Implementations of algorithms from book "Grokking Algorithms - An
+Illustrated Guide for progrgammers and other curious people"
+
+** Specification
+   :PROPERTIES:
+   :CUSTOM_ID: specification
+   :END:
+*** Main Algorithms
+    :PROPERTIES:
+    :CUSTOM_ID: main-algorithms
+    :END:
+**** Chapter 1
+     :PROPERTIES:
+     :CUSTOM_ID: chapter-1
+     :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch1/bs.ts][Binary
+  Search]] - Algorithm to find an item from a sorted list of items. It
+  works by repeatedly dividing in half the portion of the list that
+  could contain the item, until you've narrowed down the possible
+  locations to just one.
+
+**** Chapter 2
+     :PROPERTIES:
+     :CUSTOM_ID: chapter-2
+     :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch2/sls.ts][Selection
+  Sort]] - The selection sort algorithm sorts an array by repeatedly
+  finding the minimum element (considering ascending order) from
+  unsorted part and putting it at the beginning. The algorithm maintains
+  two subarrays in a given array.
+
+**** Chapter 3
+     :PROPERTIES:
+     :CUSTOM_ID: chapter-3
+     :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch3/fac.ts][Factorial]] -
+  A function thats multiply all whole numbers from the chosen number
+  down to 1, recursivaly.
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch3/sqrt.ts][Square
+  Root]] - Given a number, calculates the square root based on Newthon's
+  algorithm thats says: "y is square root of a once y² is equal a".
+
+**** Chapter 4
+     :PROPERTIES:
+     :CUSTOM_ID: chapter-4
+     :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/count.ts][Count]] -
+  Program that count how many elements is on an array, recursivaly.
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/max.ts][Max]] -
+  Return the gretest number given an array.
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/sum.ts][Sum]] -
+  Sums all elements of an array with recursion, using divide and
+  conquer.
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch4/qsort.ts][Quick
+  Sort]] - Is based on partitioning of array of data into smaller
+  arrays. A large array is partitioned into two arrays one of which
+  holds values smaller than the specified value, say pivot, based on
+  which the partition is made and another array holds values greater
+  than the pivot value. Quicksort partitions an array and then calls
+  itself recursively twice to sort the two resulting subarrays.
+
+*** Chapter 5
+    :PROPERTIES:
+    :CUSTOM_ID: chapter-5
+    :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/ch5/hash.ts][Hash
+  Table]] - Creates an auto-resize Hash Table. A Hash Table is a data
+  structure that implements an associative array abstract data type, a
+  structure that can map keys to values. It uses a hash function to
+  compute an index, also called hash code.
+
+*** Utils
+    :PROPERTIES:
+    :CUSTOM_ID: utils
+    :END:
+
+- [[https://github.com/zoedsoupe/grokking-algorithms/blob/master/src/utils/utils.ts][Sort,
+  Average, Head]] - Basic algorithms to solve some problems as helper
+  functions.
+
+** Install
+   :PROPERTIES:
+   :CUSTOM_ID: install
+   :END:
+
+   WIP...
+
+** Run tests
+   :PROPERTIES:
+   :CUSTOM_ID: run-tests
+   :END:
+#+begin_example
+  deno test
+#+end_example
+
+** 📝 License
+   :PROPERTIES:
+   :CUSTOM_ID: license
+   :END:
+Copyright © 2020 [[https://github.com/zoedsoupe][Zoey de Souza
+Pessanha <zoey.spessanha@zeetech.io>]]. This project is
+[[https://github.com/zoedsoupe/grokking-algorithms/blob/master/LICENSE][GPLv3]]
+licensed.
