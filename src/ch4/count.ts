@@ -7,7 +7,7 @@ export function countA(arr: ReadonlyArray<number>): LazyT<number> {
 
 function doCountA(
   arr: ReadonlyArray<number>,
-  acc: LazyT<number>
+  acc: LazyT<number>,
 ): LazyT<number> {
   if (arr.length < 1) return acc;
 
