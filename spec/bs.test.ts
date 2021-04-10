@@ -1,12 +1,17 @@
-import { sort } from '../utils/utils';
-import { binarySearch } from '../ch1/bs';
+import { binarySearch } from "../src/ch1/bs.ts";
+import { quickSort } from "./src/ch4/qsort.ts";
+import {
+  assert,
+  assertStrictEquals,
+} from "https://deno.land/std@0.92.0/testing/asserts.ts";
 
-describe('Test Binary Search algorithm', () => {
-  it('should return the correct index of given a number', () => {
-    const arr: ReadonlyArray<number> = [1, 5, 3, 6, 7, 10, 56, 23, 45, 2];
+Deno.test("Test Binary Search algorithm", () => {
+  const xs: ReadonlyArray<number> = [1, 5, 3, 6, 7, 10, 56, 23, 45, 2];
 
-    const index = binarySearch(sort(arr), 6);
+  const ys = [...x].sort();
 
-    expect(index).toEqual(4);
-  });
+  const index = binarySearch(ys, 6);
+
+  assert(index);
+  assertStrictEquals(index, 4);
 });

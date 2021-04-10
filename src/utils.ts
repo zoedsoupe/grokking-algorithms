@@ -1,4 +1,9 @@
-type LazyT<A> = () => A;
+export type LazyT<A> = () => A;
+
+export type ListT<A> = LazyT<{
+  head: LazyT<A>;
+  tail: ListT<A>;
+} | null>;
 
 export namespace Lazy {
   export function sum(a: LazyT<number>, b: LazyT<number>): LazyT<number> {
@@ -26,11 +31,6 @@ export namespace Lazy {
 }
 
 export namespace List {
-  type ListT<A> = LazyT<{
-    head: LazyT<A>;
-    tail: ListT<A>;
-  } | null>;
-
   // List helpers
   export function toList<A>(xs: A[]): ListT<A> {
     return () => {
@@ -96,6 +96,20 @@ export namespace List {
       return null;
     };
   }
+
+  export function length<A>(xs: List<A>): LazyT<number> {
+    return l(xs, () => 0);
+  }
+
+  const l = <A>(xs: ListT<A>, acc: LazyT<A>): LazyT<A> => {
+    return () => {
+      const pair = xs();
+
+      if (pair === null) return acc();
+
+      return l(xs, () => acc() + 1);
+    };
+  };
 
   export function filter<A>(f: (x: A) => boolean, xs: ListT<A>): ListT<A> {
     return () => {
