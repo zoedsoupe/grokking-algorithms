@@ -1,5 +1,5 @@
 import { sqrt } from "../src/ch3/sqrt.ts";
-import { assertGreaterThanOrEqual } from "./asserts.ts";
+import { assertGreaterThanOrEqual } from "./assertions.ts";
 
 Deno.test("test newthon's square root", () => {
   const xs: readonly number[] = [2, 25, 49, 81];

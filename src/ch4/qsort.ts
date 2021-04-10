@@ -1,18 +1,21 @@
 // QUICKSORT
-import { head } from "../utils/utils";
+import { LazyT } from "../utils.ts";
 
 // calculates all number lesser than given a number
-const lesser = (arr: ReadonlyArray<number>, n: number) =>
-  arr.filter((el) => el < n);
+function lesser(arr: ReadonlyArray<number>, n: LazyT<number>): LazyT<boolean> {
+  return () => arr.filter((el) => el < n());
+}
 
 // filter all numbers that're gretaer than a number on an array
-const greater = (arr: ReadonlyArray<number>, n: number) =>
-  arr.filter((el) => el > n);
+function greater(arr: ReadonlyArray<number>, n: LazyT<number>): LazyT<boolean> {
+  return () => arr.filter((el) => el > n());
+}
 
-export const quickSort = (
+export function quickSort(
   arr: ReadonlyArray<number>,
-  p = head(arr),
-): ReadonlyArray<number> =>
+): ReadonlyArray<number> {
+  const p = arr[0];
+
   // base case
   // dont need to call itself again
   // or don't even need to call recursion
@@ -20,4 +23,5 @@ export const quickSort = (
   // with lesser and greater values given a pivot
   // always divinding and conquering
   // and return this array
-    [...quickSort(lesser(arr, p)), p, ...quickSort(greater(arr, p))];
+    [...quickSort(lesser(arr, p))(), p, ...quickSort(greater(arr, p)())];
+}
