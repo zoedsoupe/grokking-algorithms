@@ -13,6 +13,6 @@ function doFactorial(n: LazyT<number>, a: LazyT<number>): LazyT<number> {
 
   return doFactorial(
     () => n() - 1,
-    () => acc() * n()
+    () => acc() * n(),
   );
 }

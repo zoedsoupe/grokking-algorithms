@@ -1,5 +1,5 @@
 // SUM
-import { LazyT, ListT, List } from "../utils.ts";
+import { LazyT, List, ListT } from "../utils.ts";
 
 export function sumA(arr: ReadonlyArray<number>): number {
   return doSumA(arr, () => 0);
